@@ -39,7 +39,6 @@ app.use(require("cors")({ credentials: true, origin: true }));
 const corsOptions = {
     origin: "https://linked-in-sand.vercel.app" // frontend URI (ReactJS)
 }
-app.use(express.json());
 app.use(cors(corsOptions));
 
 
