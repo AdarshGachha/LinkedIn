@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 
 export const asynccurrentstudent = () => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student");
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student");
     dispatch(addstudent(data.student));
   } catch (error) {
     dispatch(iserror(error.response.data));
@@ -20,7 +20,7 @@ export const asynccurrentstudent = () => async (dispatch, getState) => {
 
 export const asyncsignupstudent = (student) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student/signup", student);
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/signup", student);
     dispatch(asynccurrentstudent());
   } catch (error) {
     dispatch(iserror(error.response.data));
@@ -29,7 +29,7 @@ export const asyncsignupstudent = (student) => async (dispatch, getState) => {
 
 export const asyncsigninstudent = (student) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student/signin", student);
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/signin", student);
     // console.log(data);
     dispatch(asynccurrentstudent());
   } catch (error) {
@@ -39,7 +39,7 @@ export const asyncsigninstudent = (student) => async (dispatch, getState) => {
 
 export const asyncsignoutstudent = (student) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.get("/student/signout");
+    const { data } = await axios.get("https://mern-deoply-backend.onrender.com/student/signout");
     // console.log(data);
     dispatch(removestudent());
   } catch (error) {
@@ -50,7 +50,7 @@ export const asyncsignoutstudent = (student) => async (dispatch, getState) => {
 export const asyncupdatestudent = (student) => async (dispatch, getState) => {
   try {
     const { _id } = getState().studentReducer.student;
-    const { data } = await axios.post("/student/update/" + _id, student);
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/update/" + _id, student);
     // console.log(data);
     dispatch(asynccurrentstudent());
   } catch (error) {
@@ -61,7 +61,7 @@ export const asyncupdatestudent = (student) => async (dispatch, getState) => {
 export const asyncavatarstudent = (avatar) => async (dispatch, getState) => {
   try {
     const { _id } = getState().studentReducer.student;
-    const { data } = await axios.post("/student/avatar/" + _id, avatar);
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/avatar/" + _id, avatar);
     // console.log(data);
     dispatch(asynccurrentstudent());
   } catch (error) {
@@ -74,7 +74,7 @@ export const asyncresetpasswordstudent =
     try {
       const { _id } = getState().studentReducer.student;
       const { data } = await axios.post(
-        "/student/reset-password/" + _id,
+        "https://mern-deoply-backend.onrender.com/student/reset-password/" + _id,
         password
       );
       // console.log(data);
@@ -87,7 +87,7 @@ export const asyncresetpasswordstudent =
 export const asyncforgetpasswordstudent =
   (email) => async (dispatch, getState) => {
     try {
-      const { data } = await axios.post("/student/send-mail/", email);
+      const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/send-mail/", email);
       dispatch(asynccurrentstudent());
     } catch (error) {
       dispatch(iserror(error.response.data));
@@ -96,7 +96,7 @@ export const asyncforgetpasswordstudent =
 
 export const asyncotppasswordstudent = (pwd) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student/forget-link/", pwd);
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/forget-link/", pwd);
     dispatch(asynccurrentstudent());
   } catch (error) {
     dispatch(iserror(error.response.data));
@@ -106,7 +106,7 @@ export const asyncotppasswordstudent = (pwd) => async (dispatch, getState) => {
 // read all jobs
 export const asyncalljobs = () => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student/alljobs/");
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/alljobs/");
     dispatch(addjobs(data.jobs));
   } catch (error) {
     dispatch(iserror(error.response.data));
@@ -117,7 +117,7 @@ export const asyncalljobs = () => async (dispatch, getState) => {
 
 export const asyncallinternships = () => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student/allinternships/");
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/allinternships/");
     dispatch(addinternships(data.internships));
   } catch (error) {
     dispatch(iserror(error.response.data));
@@ -126,7 +126,7 @@ export const asyncallinternships = () => async (dispatch, getState) => {
 
 export const asyncapplyjobstudent = (id) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student/apply/job/" + id);
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/apply/job/" + id);
     dispatch(asynccurrentstudent());
     dispatch(asyncalljobs());
   } catch (error) {
@@ -136,7 +136,7 @@ export const asyncapplyjobstudent = (id) => async (dispatch, getState) => {
 export const asyncapplyinternshipstudent =
   (id) => async (dispatch, getState) => {
     try {
-      const { data } = await axios.post("/student/apply/internship/" + id);
+      const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/apply/internship/" + id);
       dispatch(asynccurrentstudent());
       dispatch(asyncallinternships());
     } catch (error) {
@@ -371,7 +371,7 @@ export const asynceditresponsibility =(id, resp) => async (dispatch, getState) =
 
 export const asyncstudentdelete = (id) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.post("/student/delete");
+    const { data } = await axios.post("https://mern-deoply-backend.onrender.com/student/delete");
     // console.log(data);
     dispatch(removestudent());
   } catch (error) {
