@@ -7,9 +7,7 @@ import { removeerror } from "@/store/Reducers/employeReducer";
 import { toast } from 'react-toastify';
 
 
-export const metadata = {
-    title: 'employe | Homepage',
-  }
+
 const page = () => {
   const router =  useRouter ();
   const dispatch = useDispatch();
