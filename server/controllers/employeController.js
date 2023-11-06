@@ -203,7 +203,7 @@ exports.readsingleinternship = catchAsyncErrors(async (req, res, next) => {
 //---------------Internship-----------------//
 
 exports.createjob = catchAsyncErrors(async (req, res, next) => {
-  const employe = await Employe.findById(req.id).populate("students").exec();
+  const employe = await Employe.findById(req.id).exec();
   const job = await new Job(req.body);
   job.employe = employe._id;
   employe.jobs.push(job._id); 

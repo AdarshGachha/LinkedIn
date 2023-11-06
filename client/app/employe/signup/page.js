@@ -182,25 +182,8 @@ const page = () => {
               label="Organization Name"
             />
           </div>
-          <Checkbox
-            label={
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center font-normal"
-              >
-                I agree the
-                <a
-                  href="#"
-                  className="font-medium transition-colors hover:text-gray-900"
-                >
-                  &nbsp;Terms and Conditions
-                </a>
-              </Typography>
-            }
-            containerProps={{ className: "-ml-2.5" }}
-          />
-          <Button className="mt-6 bg-primary" fullWidth>
+          
+          <Button onClick={SignupHandler} className="mt-6 bg-primary" fullWidth>
             Register
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">

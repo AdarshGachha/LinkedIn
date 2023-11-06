@@ -25,7 +25,7 @@ const page = () => {
             employe.jobs.map((job, i) => (
               <div className="" key={job._id}>
                 <Card className="mt-6 w-96  ">
-                <Button className="mb-4">Job</Button>
+                <Button className="mt-4 ml-4 border border-blue-600 text-blue-600 bg-transparent w-fit ">Job</Button>
                   <CardBody className="">
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       Job role : {job.title}
@@ -55,7 +55,7 @@ const page = () => {
             employe.internships.map((internship, i) => (
               <div className="" key={internship._id}>
                   <Card className="mt-6 w-96  ">
-                  <Button className="mb-4">Internship</Button>
+                  <Button className="mt-4 ml-4 border border-yellow-600 text-yellow-600 bg-transparent w-fit">Internship</Button>
                   <CardBody className="">
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       internship role : {internship.profile}

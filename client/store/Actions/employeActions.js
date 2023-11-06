@@ -151,7 +151,7 @@ export const asyncotppasswordemploye = (pwd) => async (dispatch, getState) => {
 export const asynccreatejobemploye = (job) => async (dispatch, getState) => {
   try {
 
-    const { data } = await axios.post("/employe/job/create/",job);
+    const { data } = await axios.post("/employe/job/create",job);
   dispatch(asynccurrentemploye());
 
 
@@ -167,7 +167,7 @@ export const asynccreatejobemploye = (job) => async (dispatch, getState) => {
 export const asynccreateinternshipemploye = (internship) => async (dispatch, getState) => {
   try {
 
-    const { data } = await axios.post("/employe/internship/create/",internship);
+    const { data } = await axios.post("/employe/internship/create",internship);
   dispatch(asynccurrentemploye());
 
 

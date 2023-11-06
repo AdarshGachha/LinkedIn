@@ -33,7 +33,7 @@ app.use(cookieparser());
 
 
 // CORS
-// app.use(require("cors")({ credentials: true, origin: true }));
+app.use(require("cors")({ credentials: true, origin: true }));
 
 // middleware
 const corsOptions = {

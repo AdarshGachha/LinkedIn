@@ -42,10 +42,7 @@ const page = () => {
       preferences: preferences,
       salary: salary,
       perks: perks,
-      assessments: {
-        assessment: assessments,
-        ans: "",
-      },
+      assessments: assessments
     };
     dispatch(asynccreatejobemploye(job));
     

@@ -34,9 +34,7 @@ const jobModel = new mongoose.Schema({
         required:[true,"salary is required"],
     },
     perks:String,
-    assessments:{
-        type:String,
-    },
+    assessments: String
 
 },{timestamps:true});
 
